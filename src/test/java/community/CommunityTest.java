@@ -28,7 +28,7 @@ public class CommunityTest {
     @Test
     public void addInvalidHigherContribution() {
         try {
-            community.addMember(new Member("Joe", "2333"), new Contribution(Integer.MAX_VALUE));
+            community.addMember(new Member("Joe", "2333"), new Contribution(Integer.MAX_VALUE + 1));
             assert (false);
         } catch (Exception e) {
             assert (true);
@@ -38,7 +38,7 @@ public class CommunityTest {
     @Test
     public void addInvalidLowerContribution() {
         try {
-            community.addMember(new Member("Joe", "2333"), new Contribution(Integer.MIN_VALUE));
+            community.addMember(new Member("Joe", "2333"), new Contribution(Integer.MIN_VALUE - 1));
             assert (false);
         } catch (Exception e) {
             assert (true);

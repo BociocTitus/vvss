@@ -2,7 +2,6 @@ package model;
 
 public class Contribution {
     private Integer sum;
-
     @Override
     public String toString() {
         return "Contribution{" +
@@ -19,7 +18,9 @@ public class Contribution {
     }
 
     public Contribution(Integer sum) {
-
+        if (Integer.MAX_VALUE <= sum || sum <= Integer.MIN_VALUE) {
+            throw new RuntimeException("Invalid contribution sum");
+        }
         this.sum = sum;
     }
 }
