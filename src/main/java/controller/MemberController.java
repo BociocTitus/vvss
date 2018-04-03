@@ -2,7 +2,6 @@ package controller;
 
 import exceptions.InvalidNameException;
 import model.Member;
-import org.omg.CORBA.ORBPackage.InvalidName;
 import repository.MemberRepository;
 
 import java.util.List;
@@ -16,8 +15,14 @@ public class MemberController {
     }
 
     public void addMember(Member aMemebr) throws InvalidNameException {
-        for(char c:aMemebr.getName().toCharArray()){
-            if(!Character.isLetter(c))
+        Integer.parseInt(aMemebr.getId());
+
+        if (aMemebr.getName().isEmpty()) {
+            throw new InvalidNameException();
+        }
+
+        for (char c : aMemebr.getName().toCharArray()) {
+            if (!Character.isLetter(c))
                 throw new InvalidNameException();
         }
         mr.addMember(aMemebr);
