@@ -2,7 +2,6 @@ package controller;
 
 
 import exceptions.InvalidNameException;
-import model.Contribution;
 import model.Member;
 import org.junit.Before;
 import org.junit.Test;

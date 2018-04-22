@@ -13,7 +13,7 @@ public class App {
         EntryRepository entryRepository = new EntryRepository();
 
         MemberController ctrl = new MemberController(repo);
-        EntryController entryController = new EntryController(entryRepository);
+        EntryController entryController = new EntryController(repo, entryRepository);
 
         MemberUI console = new MemberUI(ctrl, entryController);
         console.Run();
